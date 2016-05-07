@@ -9,7 +9,7 @@ import (
 func main() {
 	e := echo.New()
 
-	middleware.Static("")
+	e.Use(middleware.Static(""))
 
 	e.Get("/api", func(c echo.Context) error {
 		return c.String(200, "yo!")
